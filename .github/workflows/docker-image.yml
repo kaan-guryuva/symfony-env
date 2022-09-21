@@ -29,7 +29,5 @@ jobs:
       name: Build and push
       uses: docker/build-push-action@v2
       with:
-        context: .
-        file: ./docker-compose.yml
         push: true
         tags: ${{ secrets.DOCKER_UNAME }}/symfony-env:latest
