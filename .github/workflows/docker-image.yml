@@ -32,4 +32,4 @@ jobs:
         context: .
         file: ./docker-compose.yml
         push: true
-        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/symfony-env:latest
+        tags: ${{ secrets.DOCKER_UNAME }}/symfony-env:latest
