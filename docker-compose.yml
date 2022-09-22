@@ -9,11 +9,20 @@ services:
       - ${HTTP_PORT}:80
       - ${HTTPS_PORT}:443
     volumes:
-      - ./app:/var/www/trive
+      - ./app:${PROJECT_DIR}
+      - ./docker/certbot/www:/var/www/certbot/
+      - ./docker/certbot/conf/:/etc/letsencrypt/
       - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - mysql8-service
       - php8-service
+
+  #certbot
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - ./docker/certbot/conf/:/etc/letsencrypt/
+      - ./docker/certbot/www:/var/www/certbot/
 
   # mysql
   mysql8-service:
