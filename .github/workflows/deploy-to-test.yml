@@ -25,7 +25,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       
-      - name: Install rsync
+      - name: Install rsync -2
         run: apt-get install rsync
       
       - name: Install SSH Key
