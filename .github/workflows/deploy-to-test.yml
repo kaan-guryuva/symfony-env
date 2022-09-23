@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Deploy to test server
 
 # Controls when the workflow will run
 on:
@@ -24,9 +24,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      
-      - name: check rsync
-        run: rsync --version
       
       - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2
