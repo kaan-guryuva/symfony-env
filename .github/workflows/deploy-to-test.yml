@@ -27,6 +27,7 @@ jobs:
       
       - name: Install rsync
         run: |
+          sudo su
           apt-get update -y
           apt-get install -y rsync 
       
